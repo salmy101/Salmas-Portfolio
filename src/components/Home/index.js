@@ -13,7 +13,7 @@ const Home = () => {
         <br />
         Web Developer
         </h1>
-        <h2>tag line ......</h2>
+        <h2>tag line here....... </h2>
         <Link to="/contact" className='flat-button'>CONTACT ME</Link>
       </div>
     </div>
