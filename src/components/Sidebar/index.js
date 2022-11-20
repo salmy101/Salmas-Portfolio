@@ -2,7 +2,7 @@ import "./index.scss";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import LogoS from "../../assests/images/logo-s.png";
-import LogoSubtitle from "../../assests/images/logo_sub.png";
+// import LogoSubtitle from "../../assests/images/logo_sub.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faContactCard,
@@ -17,7 +17,7 @@ function Sidebar() {
     <div className="nav-bar">
       <Link className="logo" to="/">
         <img src={LogoS} alt="logo" />
-        <img className="sub-logo" src={LogoSubtitle} alt="solbodan" />
+        {/* <img className="sub-logo" src={LogoSubtitle} alt="salma" /> */}
       </Link>
       <nav>
         <NavLink exact="true" activeclassname="active" to="/">
