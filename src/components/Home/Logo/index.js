@@ -15,9 +15,9 @@ const Logo = () => {
       gsap.registerPlugin(DrawSVGPlugin)
 
       gsap.timeline().to(bgRef.current, {
-        duration: 1,
+        duration: 1, //the .to() function repersent the animation at end state
         opacity: 1,
-      })//calls animatios in a sequence
+      })
     }, [] )
 
 
