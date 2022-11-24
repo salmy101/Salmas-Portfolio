@@ -32,6 +32,17 @@ const Home = () => {
   //     setLetterClass('text-animate-hover')
   //   }, 4000)
   // }, [])
+
+  useEffect(() => {
+        
+    let timeoutId = setTimeout(() => {
+        setLetterClass('text-animate-hover')
+    }, 4000)
+    
+    return () => {
+                clearTimeout(timeoutId)
+            }
+}, [])
   
 
   return (
@@ -57,7 +68,7 @@ const Home = () => {
           idx={22}
            />
         </h1>
-        <h2>tag line here....... </h2>
+        <h2> Developer, Reader, and Tea Lover.</h2>
         <Link to="/contact" className="flat-button">
           CONTACT ME
         </Link>
