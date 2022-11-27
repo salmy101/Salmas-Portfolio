@@ -9,6 +9,7 @@ import {
   faEnvelope,
   faHome,
   faUser,
+  faSuitcase,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -20,7 +21,8 @@ function Sidebar() {
         {/* <img className="sub-logo" src={LogoSubtitle} alt="salma" /> */}
       </Link>
       <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
+        <NavLink exact="true" activeclassname="active" className="home-link"
+to="/">
           <FontAwesomeIcon icon={faHome} color="#4d4d43" />
         </NavLink>
 
@@ -40,6 +42,15 @@ function Sidebar() {
           to="/contact"
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d43" />
+        </NavLink>
+
+        <NavLink
+          exact="true"
+          activeclassname="active"
+          className="portfolio-link"
+          to="/portfolio"
+        >
+          <FontAwesomeIcon icon={faSuitcase} color="#4d4d43" />
         </NavLink>
       </nav>
       <ul>
