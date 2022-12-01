@@ -35,14 +35,6 @@ to="/">
           <FontAwesomeIcon icon={faUser} color="#4d4d43" />
         </NavLink>
 
-        <NavLink
-          exact="true"
-          activeclassname="active"
-          className="contact-link"
-          to="/contact"
-        >
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d43" />
-        </NavLink>
 
         <NavLink
           exact="true"
@@ -51,6 +43,14 @@ to="/">
           to="/portfolio"
         >
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d43" />
+        </NavLink>
+        <NavLink
+          exact="true"
+          activeclassname="active"
+          className="contact-link"
+          to="/contact"
+        >
+          <FontAwesomeIcon icon={faEnvelope} color="#4d4d43" />
         </NavLink>
       </nav>
       <ul>
