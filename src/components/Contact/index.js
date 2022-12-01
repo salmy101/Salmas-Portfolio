@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
+import "./index.scss";
 import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters/index";
-import emailjs from "@emailjs/browser"
-import "./index.scss"
+import emailjs from "@emailjs/browser";
+import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -13,24 +14,22 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-    .sendForm(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
-      refForm.current,
-      process.env.REACT_APP_PUBLIC_KEY
-      // 'service_sd3eb2v',//service id
-      // 'template_lnxxwaa', //template id
-      // refForm.current,
-      // '1sBJT3awcj4uFUjfJ' //public key
-    ).then(
-      () => {
-        alert("Message Successful");
-        window.location.reload(false) //reload page so the form resets
-      }, () => {
-        alert("Message Faile, plz try again");
-      });
-
-  }
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        refForm.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("Message Successful");
+          window.location.reload(false); //reload page so the form resets
+        },
+        () => {
+          alert("Message Faile, plz try again");
+        }
+      );
+  };
 
   useEffect(() => {
     let timeoutId = setTimeout(() => {
@@ -49,7 +48,7 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
               idx={15}
             />
           </h1>
@@ -92,10 +91,32 @@ const Contact = () => {
                 </li>
               </ul>
             </form>
+          </div>
         </div>
+        <div className="info-map">
+          Salma Ibrahim
+          <br />
+          Canada,
+          <br />
+          Alberta,
+          <br />
+          Edmonton
+          <br />
+          <span>
+            salma.ibrahim1307@gmail.com
+          </span>
+        </div>
+        <div className="map-wrap">
+        <MapContainer center={[61.0666922, -107.9917071]} zoom={11}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={[61.0666922, -107.9917071]}>
+            <Popup>Good ol' Berta</Popup>
+          </Marker>
+
+          </MapContainer>
+
         </div>
       </div>
-
       {/* <Loader type="pacman" /> */}
     </>
   );
